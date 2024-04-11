@@ -1,0 +1,15 @@
+class Solution {
+   public int majorityElement(int[] nums) {
+    int candidate = 0, count = 0;
+
+    for (int num : nums) {
+        if (count == 0) {
+            candidate = num;  // Set a new candidate if count is 0
+        }
+        count += (num == candidate) ? 1 : -1;  // Increment count if match, decrement otherwise
+    }
+
+    return candidate;  // Candidate will be the majority element if it exists
+}
+
+}
