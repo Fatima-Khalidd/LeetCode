@@ -1,0 +1,23 @@
+lass MyQueue {
+
+ private Stack firstStack;
+         private Stack finalStack;
+    public MyQueue() {
+         firstStack=new Stack<>();
+         finalStack=new Stack<>();
+    }
+    
+    public void enqueue(int x)
+    {
+        firstStack.push(x);
+    }
+    public int dequeue() {
+     if((finalStack.isEmpty()))
+     {
+      while(!(firstStack.isEmpty()))
+      {
+        finalStack.push(firstStack.pop());
+      }
+     }   
+     return finalStack.pop(); 
+    }
